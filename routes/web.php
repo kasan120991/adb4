@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::get('/sales', 'SalesDepartmentController@dashboard');
 
+Route::resource('calls', 'CallsController');
+
 Auth::routes();
