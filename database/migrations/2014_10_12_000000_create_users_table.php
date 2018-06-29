@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->integer('department');
             $table->integer('position');
             $table->integer('extension');
-            $table->integer('active');
-            $table->integer('admin');
+            $table->tinyInteger('active');
+            $table->tinyInteger('admin');
             $table->rememberToken();
             $table->timestamps();
         });
