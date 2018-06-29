@@ -22,7 +22,7 @@
 <body>
 <div id="app">
     @include('sales.layout.navigation')
-    <div class="container">
+    <div class="container my-3">
         @include('global.messages')
         @yield('content')
     </div>
