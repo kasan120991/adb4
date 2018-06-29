@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sales', 'SalesController@dashboard');
+Route::get('/sales', 'SalesDepartmentController@dashboard');
 
 Auth::routes();
