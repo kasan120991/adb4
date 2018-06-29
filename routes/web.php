@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/sales', 'SalesController@dashboard');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
