@@ -22,7 +22,7 @@ class CreateContactsTable extends Migration
             $table->string('fax');
             $table->string('extension');
             $table->string('email');
-            $table->longText('notes');
+            $table->text('notes');
         });
     }
 
