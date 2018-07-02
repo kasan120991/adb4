@@ -5,7 +5,7 @@
         <div class="col-lg-12 mb-3">
             <div class="card">
                 <div class="card-header">
-                    Welcome, {{auth()->user()->name}} <span class="float-right">{{$date->format('l, F d ')}}</span>
+                    {{--Welcome, {{auth()->user()->name}} <span class="float-right">{{$date->format('l, F d ')}}</span>--}}
                 </div>
             </div>
         </div>
@@ -13,9 +13,10 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <div class="card">
+            <div class="card extender">
+                <div class="card-header">Open Calls</div>
                 <div class="table-responsive">
-                    <table class="table table-sm table-hover mb-0">
+                    <table class="table table-sm table-hover mb-0 ">
                         <thead>
                         <tr>
                             <th>ID#</th>
@@ -30,9 +31,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-
-                        </tr>
+                        @foreach($calls as $call)
+                            <tr>
+                                <td>{{$call->company_name}}</td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
