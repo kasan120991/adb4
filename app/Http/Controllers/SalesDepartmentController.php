@@ -22,6 +22,8 @@ class SalesDepartmentController extends Controller
         $calls = DB::table('calls')
             ->leftJoin('customers', 'calls.company', '=', 'customers.customer_id')
             ->leftJoin('contacts', 'calls.contact', '=', 'contacts.id')
+            ->leftJoin('reasons', 'calls.reason', '=', 'reasons.id')
+            ->leftJoin('users', 'calls.user_id', '=', 'users.id')
             ->get();
         $data = array(
             'date' => $date,
