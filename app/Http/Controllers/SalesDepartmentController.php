@@ -15,13 +15,19 @@ class SalesDepartmentController extends Controller
     }
 
     public function dashboard() {
-//        $date = Carbon::now();
+        $date = Carbon::now();
         $user = auth()->user()->id;
 //        $user_object = User::find($user);
 
-        $calls = DB::table('calls')->leftJoin('customers', 'calls.company', '=', 'customers.customer_id')->get();
+        $calls = DB::table('calls')
+            ->leftJoin('customers', 'calls.company', '=', 'customers.customer_id')
+            ->leftJoin('contacts', 'calls.contact', '=', 'contacts.id')
+            ->get();
+        $data = array(
+            'date' => $date,
+            'calls' => $calls
+        );
 
-
-        return view('sales.dashboard')->with('calls', $calls);
+        return view('sales.dashboard')->with($data);
     }
 }

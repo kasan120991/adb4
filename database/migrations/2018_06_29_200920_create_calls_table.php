@@ -18,7 +18,7 @@ class CreateCallsTable extends Migration
             $table->string('company');
             $table->integer('contact');
             $table->integer('reason');
-            $table->integer('user');
+            $table->integer('user_id');
             $table->integer('assigned');
             $table->text('notes');
             $table->integer('status');
